@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+typedef struct {
+ int NIM;
+ float IP;
+} mahasiswa;
+
+void updateIP(mahasiswa *p, float IPBaru){
+    p->IP = IPBaru;
+}
+void printKHS(const mahasiswa *p){
+    printf ("NIM : %d\n", p-> NIM);
+    printf ("IP : %.2f\n", p->IP);
+
+}
+    
+
+
+int main(){
+    mahasiswa p = {24052, 3.85};
+    printf("sebelum IP diperbarui:\n" );
+    printKHS(&p);
+    printf("\n");
+
+    updateIP (&p, 4.00);
+    printf("setelah IP diperbarui:\n");
+    printKHS(&p);
+
+    return 0;
+}
